@@ -20,7 +20,7 @@ Connect your client to Kontext over MCP first (see the [developer guide](https:/
 ### One command
 
 ```bash
-npx skills add TheKontextCo/skills
+npx skills add TheKontextCo/kontext-skills
 ```
 
 The [skills CLI](https://github.com/vercel-labs/skills) detects your installed agents and places the skills correctly.
