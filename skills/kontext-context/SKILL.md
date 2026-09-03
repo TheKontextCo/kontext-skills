@@ -26,6 +26,21 @@ developer guide (https://thekontextco.ai/developers) instead of improvising.
 - State when no relevant Kontext record was found; do not invent missing
   context.
 
+## Divide memory duties
+
+- If the client has its own local memory or instruction store (auto-memory,
+  AGENTS.md, memory tool), keep only narrow always-needed facts there: who the
+  user is, standing preferences, environment basics. Do not duplicate
+  structured work records into it.
+- Treat Kontext as the system of record for everything durable and
+  structured: projects, tasks, decisions, documents, and anything that must
+  survive across clients or exceed a short note.
+- When a durable fact is worth keeping, record it in Kontext. When a standing
+  preference emerges, record it in the local store as well so the client keeps
+  it even when Kontext tools are not connected.
+- Do not let Kontext's presence suppress the client's own memory behavior;
+  the two layers complement each other.
+
 ## Save intentionally
 
 - Save durable project details, decisions, action items, long-form documents,
