@@ -1,0 +1,29 @@
+name: Validate skills
+
+on:
+  push:
+    branches: [main]
+    paths: ["skills/**", ".github/workflows/validate.yml"]
+  pull_request:
+    paths: ["skills/**", ".github/workflows/validate.yml"]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate SKILL.md frontmatter (agentskills.io spec)
+        run: npx --yes skills-ref validate skills/*/SKILL.md
+
+      - name: Every skill folder has a SKILL.md and names match
+        run: |
+          set -euo pipefail
+          for dir in skills/*/; do
+            name=$(basename "$dir")
+            file="$dir/SKILL.md"
+            test -f "$file" || { echo "MISSING: $file"; exit 1; }
+            front_name=$(awk '/^---$/{c++; next} c==1 && /^name:/{print $2; exit}' "$file")
+            [ "$front_name" = "$name" ] || { echo "NAME MISMATCH: $dir declares '$front_name'"; exit 1; }
+          done
+          echo "All skills valid."
