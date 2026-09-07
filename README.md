@@ -12,6 +12,7 @@ The tools arrive over MCP at `https://thekontextco.ai/mcp`. The skills teach the
 | [`kontext-tasks`](skills/kontext-tasks/) | The task loop: check what exists → track → update → close → decide what's next |
 | [`kontext-memory`](skills/kontext-memory/) | Capture discipline: what is worth `save_to_kontext`, what must never be saved |
 | [`kontext-sharing`](skills/kontext-sharing/) | Working with shared records: readOnly boundaries, edit permissions, invitations |
+| [`kontext-teams`](skills/kontext-teams/) | Explicit Team workspace selection, permissions, safe writes, and task assignment |
 
 ## Install
 
