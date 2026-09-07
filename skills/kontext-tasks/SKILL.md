@@ -22,6 +22,11 @@ Kontext MCP tools (see `kontext-context`).
 
 - Update the task at real milestones only: a decision, a blocker, a finished
   phase. Do not spam status notes.
+- For work in an explicitly selected Team, use
+  `list_assignment_candidates` when that tool is available. Confirm the intended
+  assignee with the user before passing `assigneeUserId` or `assignee:"me"`
+  to `manage_task`; pass null only when the user wants the task unassigned.
+  Use `list_tasks.assignedTo` to find one member's or the unassigned work.
 - When a decision is made or durable context emerges, save it
   (`save_to_kontext` or `manage_document`) and keep the task record current.
 - If work stalls on something external, record the blocker so the next session
