@@ -14,6 +14,10 @@ developer guide (https://thekontextco.ai/developers) instead of improvising.
 ## Retrieve before continuing
 
 - Check Kontext before starting work that may already exist.
+- When the user supplies a Kontext Library URL, `/library` path, or `rsc_`
+  identity, call `open_library_link` first. Use the returned record and
+  `workspaceRef`; if it is unavailable, do not broaden into a cross-workspace
+  search.
 - Use `search_context` when the relevant record is not already known. Prefer a
   narrow list or read tool when the user names an entity, and use
   `get_my_context` for a compact overview.
